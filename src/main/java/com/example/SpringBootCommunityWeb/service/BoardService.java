@@ -24,7 +24,6 @@ public class BoardService {
         pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() -1
                 , pageable.getPageSize());
         return boardRepository.findAll(pageable);
-        
     }
 
     public Board findBoardByIdx(Long idx){
