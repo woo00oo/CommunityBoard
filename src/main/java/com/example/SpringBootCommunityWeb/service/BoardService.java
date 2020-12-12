@@ -19,9 +19,12 @@ public class BoardService {
     }
 
     public Page<Board> findBoardList(Pageable pageable){
+
+        //새로운 Pageable 객체를 생성 (setter 가 없음)
         pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() -1
                 , pageable.getPageSize());
         return boardRepository.findAll(pageable);
+        
     }
 
     public Board findBoardByIdx(Long idx){
