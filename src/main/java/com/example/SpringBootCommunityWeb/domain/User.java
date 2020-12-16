@@ -3,12 +3,9 @@ package com.example.SpringBootCommunityWeb.domain;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.example.SpringBootCommunityWeb.domain.enums.SocialType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,6 +29,13 @@ public class User implements Serializable {
 
     @Column
     private String email;
+
+    @Column
+    private String principal;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private SocialType socialType;
 
     @Column
     private LocalDateTime createdDate;
