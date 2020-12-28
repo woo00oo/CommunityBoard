@@ -39,4 +39,6 @@ out/
 
 ### application.yml ###
 data-rest/src/main/resources/application.yml
+
 rest-web/src/main/resources/application.yml
+
